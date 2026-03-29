@@ -86,5 +86,5 @@ python manage.py runserver
 ## 📬 Contact
 
 **Kaushal Kumar**
-GitHub: https://github.com/556kaushal
-LinkedIn: (Add your link)
+GitHub: https://github.com/kaushalG556
+LinkedIn: https://www.linkedin.com/in/kaushal-kumar-759561253/
