@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="contact" class="contact-section">
+
+    <div class="contact-container">
+
+        <h2 class="section-title">Contact Me</h2>
+        <p class="intro-text">
+            Feel free to reach out. Fill the form below or contact me directly.
+        </p>
+
+        <!-- INFO -->
+        <div class="contact-info">
+            <p><strong>📍 Location:</strong> Khandari, Agra UP, India</p>
+            <p><strong>📧 Email:</strong> 
+                <a href="mailto:mrkaushalkumar98@gmail.com">mrkaushalkumar98@gmail.com</a>
+            </p>
+            <p><strong>📞 Call:</strong> 
+                <a href="tel:+919897192426">+91 9897192426</a>
+            </p>
+        </div>
+
+        <!-- FORM -->
+        <form method="post" class="contact-form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Your Name</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label>Your Email</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                <label>Subject</label>
+                {{ form.subject }}
+            </div>
+
+            <div class="form-group">
+                <label>Your Message</label>
+                {{ form.message }}
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SECTION */
+.contact-section {
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTAINER */
+.contact-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* TITLE */
+/* TITLE */
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.section-title:hover {
+    color: #7c3aed;   /* chartreuse ki jagah premium color */
+    transform: scale(1.08);
+}
+
+/* INTRO TEXT */
+.intro-text {
+    margin: 10px 0 25px;
+    color:black;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.intro-text:hover {
+    color: #ff0080;
+    transform: translateY(-2px);
+}
+
+/* INFO */
+.contact-info p {
+    margin: 6px 0;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.contact-info p:hover {
+    color: #7c3aed;
+    transform: translateX(6px);
+}
+
+/* LINKS */
+.contact-info a {
+    color: #7c3aed;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    color: #ff0080;
+    text-decoration: underline;
+}
+
+/* 🔥 ALL TEXT HOVER (EXTRA SMOOTH EFFECT) */
+.contact-container:hover .section-title,
+.contact-container:hover .intro-text,
+.contact-container:hover .contact-info p {
+    opacity: 0.9;
+}
+
+/* FORM */
+.contact-form {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    
+}
+
+/* GROUP */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* LABEL */
+.form-group label {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* INPUT */
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+/* FOCUS */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #7c3aed;
+    outline: none;
+}
+
+/* BUTTON */
+.btn-submit {
+    padding: 12px;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER */
+.btn-submit:hover {
+    background: #5b21b6;
+}
+
+/* DARK MODE */
+.dark-mode .contact-form {
+    background: #1e293b;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode .intro-text {
+    color: #ccc;
+}
+
+/* JAB FORM PE HOVER HO */
+.contact-form:hover {
+
+    /* TITLE */
+    transform: scale(1.02);
+
+    /* glow */
+    box-shadow: 0 0 25px rgba(124,58,237,0.4);
+}
+
+/* FORM HOVER → SAB TEXT CHANGE */
+.contact-form:hover label,
+.contact-form:hover input,
+.contact-form:hover textarea,
+.contact-form:hover p {
+    color: #7c3aed;
+}
+
+/* INPUT BORDER CHANGE */
+.contact-form:hover input,
+.contact-form:hover textarea {
+    border-color: #7c3aed;
+}
+
+/* BUTTON CHANGE */
+.contact-form:hover .btn-submit {
+    background: linear-gradient(45deg, #7c3aed, #ff0080);
+    transform: scale(1.05);
+}
+
+</style>
+
+{% endblock %}

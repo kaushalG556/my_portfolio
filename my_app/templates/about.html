@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="about" class="about-section">
+
+    <div class="about-container">
+
+        <!-- IMAGE -->
+        <div class="about-image">
+            <img src="{% static 'images/my_image.jpg' %}" alt="Kaushal Kumar" class="about-img">
+        </div>
+
+        <!-- TEXT -->
+        <div class="about-text">
+            <h2>About Me</h2>
+
+            <p>
+                Hello! I'm <span class="highlight">Kaushal Kumar</span>, a passionate and enthusiastic Full Stack Developer from India.
+
+                <p>I specialize in building modern, scalable web applications using Django, Python, and related technologies.</p>
+                <p> I enjoy solving real-world problems through clean and efficient code.</p>
+
+                <p>I have worked on multiple projects including web applications and full-stack systems, which have helped me strengthen my development and problem-solving skills.</p>
+
+                <p>I am always eager to learn new technologies, take on challenges, and collaborate with like-minded individuals to create impactful solutions.</p>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+} */
+
+/* SECTION */
+.about-section {
+    padding: 60px 10%;
+}
+
+/* CONTAINER */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* IMAGE */
+.about-img {
+    width: 260px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* TEXT */
+/* HEADING */
+.about-text h2 {
+    font-size: 36px;        /* bada */
+    font-weight: 700;
+    margin-bottom: 18px;
+    transition: 0.3s;
+}
+
+/* PARAGRAPH */
+.about-text p {
+    font-size: 20px;        /* bada text */
+    line-height: 1.5;
+    margin-bottom: 14px;
+    color: #444;
+    transition: 0.3s;
+}
+
+/* IMAGE */
+.about-img {
+    width: 280px;           /* thoda bada */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* 🔥 HOVER EFFECT (MAIN PART) */
+
+/* TEXT HOVER */
+.about-text:hover h2 {
+    color: #7c3aed;
+    transform: scale(1.05);
+}
+
+.about-text:hover p {
+    color: #7c3aed;
+    transform: scale(1.02);
+}
+
+/* IMAGE HOVER */
+.about-img:hover {
+    transform: scale(1.08);
+}
+
+/* NAME */
+.highlight {
+    color: #7c3aed;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.highlight:hover {
+    color: #ff0080;
+}
+/* LIGHT MODE */
+.about-text p {
+    color: #374151;   /* clean dark grey */
+}
+
+/* DARK MODE */
+.dark-mode .about-text p {
+    color: #d1d5db;   /* soft white */
+}
+
+</style>
+
+{% endblock %}

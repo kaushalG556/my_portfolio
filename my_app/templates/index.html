@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section id="home" class="hero-section">
+    <div class="hero-content">
+
+        <div class="hero-image-container">
+            <img src="{% static 'images/my_image.jpg' %}" alt="Kaushal Kumar" class="hero-image">
+        </div>
+
+        <div class="hero-text">
+            <h2 class="hero-title" id="typing-title"></h2>
+
+            <p class="hero-subtitle" id="typing-subtitle"></p>
+        </div>
+
+    </div>  
+</section>
+
+<style>
+
+/* HERO TITLE (Animated Gradient) */
+.hero-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top: 20px;
+    font-style: italic;
+
+    background: linear-gradient(270deg, #7c3aed, #1877f2, #ff0080, #00c9ff);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: gradientMove 6s ease infinite;
+}
+/* SUBTITLE STYLE */
+.hero-subtitle {
+    font-size: 22px;
+    margin-top: 12px;
+    font-style: italic;
+    line-height: 1.6;
+
+    background: linear-gradient(270deg, #00c9ff, #7c3aed, #ff0080);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: textFlow 8s ease infinite;
+}
+.hero-text:hover .hero-subtitle {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 8px #7c3aed);
+}
+
+/* ANIMATION */
+@keyframes textFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* GRADIENT ANIMATION */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+</style>
+
+<script>
+
+/* TEXT DATA */
+const titleText = "WELCOME TO MY PORTFOLIO";
+const subtitleText = `Hi, I'm Kaushal Kumar — an aspiring Full Stack Developer.
+Skilled in Django, Python, and modern web technologies.
+I’m passionate about creating efficient, user-friendly applications.
+Explore my work and projects 🚀`;
+
+function typeSubtitle() {
+    const formattedText = subtitleText.replace(/\n/g, "<br>");
+
+    document.getElementById("typing-subtitle").innerHTML = formattedText;
+}
+let i = 0;
+let j = 0;
+
+/* TYPE TITLE */
+function typeTitle() {
+    if (i < titleText.length) {
+        document.getElementById("typing-title").innerHTML += titleText.charAt(i);
+        i++;
+        setTimeout(typeTitle, 50);
+    } else {
+        typeSubtitle();
+    }
+}
+
+/* TYPE SUBTITLE */
+function typeSubtitle() {
+    if (j < subtitleText.length) {
+        document.getElementById("typing-subtitle").innerHTML += subtitleText.charAt(j);
+        j++;
+        setTimeout(typeSubtitle, 30);
+    }
+}
+
+/* START */
+window.onload = typeTitle;
+
+</script>
+
+{% endblock %}
