@@ -11,7 +11,7 @@ It showcases my skills, projects, work experience, and certifications, along wit
 * Python
 * Django
 * HTML, CSS, JavaScript
-* MySQL / SQLite
+* SQLite
 * Bootstrap
 
 ---
